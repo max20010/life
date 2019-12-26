@@ -1,14 +1,14 @@
-#include "stdafx.h"
+#include <windows.h>
 #include <iostream>
 using namespace std;
 int m[30][30], m1[30][30];
 int check(int x, int y, int m_[30][30]) {
 	int i = 0;
-	if (m_[x + 1][y - 1] == 1 && x != 5 && y != 0) { i++; }
-	if (m_[x - 1][y + 1] == 1 && x != 0 && y != 5) { i++; }
-	if (m_[x + 1][y] == 1 && x != 5) { i++; }
-	if (m_[x][y + 1] == 1 && y != 5) { i++; }
-	if (m_[x + 1][y + 1] == 1 && x != 5 && y != 5) { i++; }
+	if (m_[x + 1][y - 1] == 1 && x != 30 && y != 0) { i++; }
+	if (m_[x - 1][y + 1] == 1 && x != 0 && y != 30) { i++; }
+	if (m_[x + 1][y] == 1 && x != 30) { i++; }
+	if (m_[x][y + 1] == 1 && y != 30) { i++; }
+	if (m_[x + 1][y + 1] == 1 && x != 30 && y != 30) { i++; }
 	if (m_[x - 1][y] == 1 && x != 0) { i++; }
 	if (m_[x][y - 1] == 1 && y != 0) { i++; }
 	if (m_[x - 1][y - 1] == 1 && x != 0 && y != 0) { i++; }
@@ -17,13 +17,12 @@ int check(int x, int y, int m_[30][30]) {
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	int a,time;
+	int a, time;
 	cout << "Введите время задержки между этапами: ";
 	cin >> time;
 	for (int i = 0;i < 30;i++) {
 		for (int j = 0;j < 30;j++) {
 			m[i][j] = rand() % 2;
-
 		}
 	}
 
@@ -50,7 +49,6 @@ int main()
 		for (int i = 0;i < 30;i++) {
 			for (int j = 0;j < 30;j++) {
 				m[i][j] = 0;
-
 			}
 		}
 		Sleep(time);
@@ -68,7 +66,6 @@ int main()
 		for (int i = 0;i < 30;i++) {
 			for (int j = 0;j < 30;j++) {
 				m1[i][j] = 0;
-
 			}
 		}
 	}
